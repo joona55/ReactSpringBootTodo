@@ -9,7 +9,6 @@ export const useAuth = () => useContext(AuthContext)
 export default function AuthProvider({ children }) {
 
     // Put some state in the context
-    const [number, setNumber] = useState(10)
 
     const [isAuthenticated, setAuthenticated] = useState(false)
 
@@ -33,7 +32,7 @@ export default function AuthProvider({ children }) {
     }
 
     return (    
-        <AuthContext.Provider value={ {number, isAuthenticated, login, logout} }>
+        <AuthContext.Provider value={ {isAuthenticated, login, logout} }>
             {children}
         </AuthContext.Provider>
     )
