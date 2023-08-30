@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { useState } from 'react'
-import { retrieveHelloWorldBean, retrieveHelloWorldPathVariable } from './api/HelloWorldApiService'
+import { retrieveHelloWorldPathVariable } from './api/HelloWorldApiService'
 
 export default function WelcomeComponent() {
 
@@ -12,21 +12,10 @@ export default function WelcomeComponent() {
         console.log('called HelloWorld')
         // REST API 호출 프레임워크 : axios 
 
-        // retrieveHelloWorldBean()
-        //     .then( (response) => successfulResponse(response) )
-        //     .catch( (error) => errorResponse(error) )
-        //     .finally( () => console.log('cleanup') )
-
-
         retrieveHelloWorldPathVariable('joona55')
             .then( (response) => successfulResponse(response) )
             .catch( (error) => errorResponse(error) )
             .finally( () => console.log('cleanup') )
-
-        // axios.get('http://localhost:8080/hello-world')
-        //     .then( (response) => successfulResponse(response) )
-        //     .catch( (error) => errorResponse(error) )
-        //     .finally( () => console.log('cleanup') )
     }
 
 
